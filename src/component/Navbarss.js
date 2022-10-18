@@ -5,13 +5,14 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from "react-router-dom";
 
 // on one ligne i can import many thinks from the bootstrap component 
 
 
 
 
-const Navbarss = ({name , setName}) => {
+const Navbarss = () => {
     return ( 
     <div>
      <Navbar bg="light" expand="lg">
@@ -24,8 +25,8 @@ const Navbarss = ({name , setName}) => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
+            <Nav.Link  as = {Link} to ="/home">Home</Nav.Link>
+            <Nav.Link as = {Link} to = "/tour">MoreDetails</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -39,7 +40,7 @@ const Navbarss = ({name , setName}) => {
               type="search"
               placeholder="Search"
               className="me-2"
-              aria-label={name}
+             
             
               
               
@@ -48,7 +49,9 @@ const Navbarss = ({name , setName}) => {
           </Form>
         </Navbar.Collapse>
       </Container>
-    </Navbar>   </div>)
+    </Navbar>   
+    </div>
+    )
 }
 
 
